@@ -118,8 +118,12 @@ $${}_E^BT*{}_T^ET = {}_T^BT$$
 
 根据后3点位姿相同，求得从末端法兰中心点到工具尖端点的姿态偏移矩阵$`_{T}^{E}R`$：
 ```math
-\because {}_E^B{R_4} = {}_E^B{R_5} = {}_E^B{R_6}\\
-\therefore {}_T^BR = {}_E^B{R_4}*{}_T^ER = {}_E^B{R_5}*{}_T^ER = {}_E^B{R_6}*{}_T^ER\\
+\because {}_E^B{R_4} = {}_E^B{R_5} = {}_E^B{R_6}
+```
+```math
+\therefore {}_T^BR = {}_E^B{R_4}*{}_T^ER = {}_E^B{R_5}*{}_T^ER = {}_E^B{R_6}*{}_T^ER
+```
+```math
 \therefore {}_T^ER = {}_E^B{R_4}^{ - 1}*{}_T^BR
 ```
 
