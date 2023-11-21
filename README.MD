@@ -19,7 +19,7 @@ $${}_E^BT*{}_T^ET = {}_T^BT$$
 
 ## 3 位姿解算  
 ### 3.1 位置偏移解算  
-$$
+```math
 \begin{matrix}
 \because
 {}_E^B{T_i}*{}_T^ET = {}_T^B{T_i}\\
@@ -37,28 +37,28 @@ $$
 
 \therefore {}_E^B{R_i}*{}_T^EP + {}_E^B{P_i} = {}_T^B{P_i}
 \end{matrix}
-$$
+```
 由于前4点的位置（XYZ）相同：
-$$
+```math
 \begin{matrix}
 {}_T^B{P_{\left( {i = 1..4} \right)}} = {}_E^B{R_1}*{}_T^EP + {}_E^B{P_1}\\
  = {}_E^B{R_2}*{}_T^EP + {}_E^B{P_2}\\
  = {}_E^B{R_3}*{}_T^EP + {}_E^B{P_3}\\
  = {}_E^B{R_4}*{}_T^EP + {}_E^B{P_4}
 \end{matrix}
-$$
+```
 
 移项可得：
-$$
+```math
 \left\{ {\begin{matrix}
 {{}_E^B{P_1} - {}_E^B{P_2} = \left( {{}_E^B{R_2} - {}_E^B{R_1}} \right)*{}_T^EP}\\
 {{}_E^B{P_2} - {}_E^B{P_3} = \left( {{}_E^B{R_3} - {}_E^B{R_2}} \right)*{}_T^EP}\\
 {{}_E^B{P_3} - {}_E^B{P_4} = \left( {{}_E^B{R_4} - {}_E^B{R_3}} \right)*{}_T^EP}
 \end{matrix}} \right.
-$$
+```
 
 改写成矩阵形式可得：
-$$
+```math
 {}_T^EP = {\left[ {\begin{matrix}
 {{}_E^B{R_2} - {}_E^B{R_1}}\\
 {{}_E^B{R_3} - {}_E^B{R_2}}\\
@@ -87,51 +87,51 @@ $$
 {{}_E^B{P_2} - {}_E^B{P_3}}\\
 {{}_E^B{P_3} - {}_E^B{P_4}}
 \end{matrix}} \right]
-$$
+```
 将前4点位姿带入上式，即可求得位置偏移$`_{T}^{E}P`$。
 
 ### 3.2 姿态偏移解算  
 
-$$
+```math
 \left\{ {\begin{matrix}
 {{}_T^BN = \frac{{{}_T^B{P_5} - {}_T^B{P_4}}}{{\left| {{}_T^B{P_5} - {}_T^B{P_4}} \right|}}}\\
 {{}_T^BA = \frac{{{}_T^B{P_6} - {}_T^B{P_4}}}{{\left| {{}_T^B{P_6} - {}_T^B{P_4}} \right|}}}
 \end{matrix}} \right.
-$$
+```
 
 由第4点和第5点确定工具坐标系的X+方向向量$`_{T}^{B}N`$  
 由第4点和第6点确定工具坐标系的Z+方向向量$`_{T}^{B}A`$  
 
-$$
+```math
 {}_T^BO = {}_T^BA \times {}_T^BN\\
 {}_T^BA = {}_T^BN \times {}_T^BO
-$$
+```
 
 再根据XYZ三个方向向量，两两正交，$`_{T}^{B}A`$与$`_{T}^{B}N`$进行矩阵叉乘，可求得Y+方向向量$`_{T}^{B}O`$。  
 因此，可求得从机器人基坐标原点到工具尖端点的位姿矩阵为：
-$$
+```math
 {}_T^BR = \left[ {\begin{matrix}
 {{}_T^BN}&{{}_T^BO}&{{}_T^BA}
 \end{matrix}} \right]
-$$
+```
 
 根据后3点位姿相同，求得从末端法兰中心点到工具尖端点的姿态偏移矩阵$`_{T}^{E}R`$：
-$$
+```math
 \because {}_E^B{R_4} = {}_E^B{R_5} = {}_E^B{R_6}\\
 \therefore {}_T^BR = {}_E^B{R_4}*{}_T^ER = {}_E^B{R_5}*{}_T^ER = {}_E^B{R_6}*{}_T^ER\\
 \therefore {}_T^ER = {}_E^B{R_4}^{ - 1}*{}_T^BR
-$$
+```
 
 ### 3.3 位姿偏移解算
 最终，可组合出从末端法兰中心点到工具尖端点的完整位姿偏移矩阵$`_{T}^{E}T`$：
-$$
+```math
 {}_T^ET = \left[
     \begin{matrix}
     {}_T^ER & {}_T^EP \\
     0 & 1
     \end{matrix}
     \right]
-$$
+```
 
 ## 参考文献
 [1]熊烁,叶伯生,蒋明.机器人工具坐标系标定算法研究[J].机械与电子,2012(06):60-63.
