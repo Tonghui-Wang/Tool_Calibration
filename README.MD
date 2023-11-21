@@ -68,7 +68,8 @@ $${}_E^BT*{}_T^ET = {}_T^BT$$
 {{}_E^B{P_2} - {}_E^B{P_3}}\\
 {{}_E^B{P_3} - {}_E^B{P_4}}
 \end{matrix}} \right]\\
-
+```
+```math
 \therefore
 {}_T^EP = {\left( {{{\left[ {\begin{matrix}
 {{}_E^B{R_2} - {}_E^B{R_1}}\\
