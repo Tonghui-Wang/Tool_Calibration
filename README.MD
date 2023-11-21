@@ -57,7 +57,7 @@ $${}_E^BT*{}_T^ET = {}_T^BT$$
 \end{matrix}} \right.
 ```
 
-改写成矩阵形式可得：
+改写成矩阵形式可得：  
 ```math
 {}_T^EP = {\left[ {\begin{matrix}
 {{}_E^B{R_2} - {}_E^B{R_1}}\\
